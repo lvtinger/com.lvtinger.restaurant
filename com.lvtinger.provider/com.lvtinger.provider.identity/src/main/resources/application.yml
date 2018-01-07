@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: identity-generator
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://root:123456@server.lvtinger.com:8761/eureka,http://root:123456@server.lvtinger.com:8762/eureka,http://root:123456@server.lvtinger.com:8763/eureka
+  instance:
+     prefer-ip-address: true
+     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+     lease-renewal-interval-in-seconds: 5
+---
+server:
+  port: 8801
+spring:
+  profiles: identity-1
+
+generator:
+  dataCenterId: 1
+  workId: 1
+---
+server:
+  port: 8802
+spring:
+  profiles: identity-2
+
+generator:
+  dataCenterId: 2
+  workId: 2
+---
+server:
+  port: 8803
+spring:
+  profiles: identity-3
+
+generator:
+  dataCenterId: 3
+  workId: 3
