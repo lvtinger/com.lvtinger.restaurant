@@ -12,15 +12,24 @@
     <artifactId>com.lvtinger.provider</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>com.lvtinger.provider.store</module>
-        <module>com.lvtinger.provider.principal</module>
         <module>com.lvtinger.provider.identity</module>
-        <module>com.lvtinger.provider.validate</module>
-        <module>com.lvtinger.provider.order</module>
         <module>com.lvtinger.provider.common</module>
+        <module>com.lvtinger.provider.merchant</module>
+        <module>com.lvtinger.provider.restaurant</module>
+        <module>com.lvtinger.provider.member</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>io.shardingjdbc</groupId>
+            <artifactId>sharding-jdbc-core</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.6</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>

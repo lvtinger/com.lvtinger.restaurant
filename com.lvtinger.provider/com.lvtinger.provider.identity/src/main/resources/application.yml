@@ -7,7 +7,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://root:123456@server.lvtinger.com:8761/eureka,http://root:123456@server.lvtinger.com:8762/eureka,http://root:123456@server.lvtinger.com:8763/eureka
+      defaultZone: http://root:123456@restaurant.lvtinger.com:8761/eureka,http://root:123456@restaurant.lvtinger.com:8762/eureka,http://root:123456@restaurant.lvtinger.com:8763/eureka
   instance:
      prefer-ip-address: true
      instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}

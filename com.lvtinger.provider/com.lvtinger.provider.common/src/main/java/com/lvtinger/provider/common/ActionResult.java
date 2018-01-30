@@ -7,11 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ActionResult<T extends Serializable> {
+public class ActionResult<T> {
     private int code;
     private String message;
     private T content;
-    private Map<String, List<String>> extend;
 
     public ActionResult() {
     }
@@ -48,14 +47,6 @@ public class ActionResult<T extends Serializable> {
 
     public void setContent(T content) {
         this.content = content;
-    }
-
-    public Map<String, List<String>> getExtend() {
-        return extend;
-    }
-
-    public void setExtend(Map<String, List<String>> extend) {
-        this.extend = extend;
     }
 
     @Override

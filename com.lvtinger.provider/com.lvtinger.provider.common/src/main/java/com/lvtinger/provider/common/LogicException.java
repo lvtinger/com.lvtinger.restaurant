@@ -6,7 +6,7 @@ import java.io.Serializable;
  * 业务异常
  * Created by lvtinger on 2017/12/6.
  */
-public class LogicException extends Exception {
+public class LogicException extends RuntimeException {
     private int code;
 
     public LogicException(int code, String message) {
